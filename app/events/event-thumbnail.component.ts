@@ -8,7 +8,11 @@ export class EventThumbnailComponent {
     @Input() event: any
     @Output() eventClick = new EventEmitter();
 
-    handleClickMe(){
+    handleClickMe() {
         this.eventClick.emit(this.event.name);
-    }
+    };
+
+    logFoo() {
+        console.log('log foo');
+    };
 }

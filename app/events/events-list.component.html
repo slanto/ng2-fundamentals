@@ -1,5 +1,6 @@
 <div>
     <h1>Upcoming Angular 2 events</h1>
     <hr/>
-    <event-thumbnail [event]="event1" (eventClick)="handleEventClicked($event)"></event-thumbnail>
+    <event-thumbnail [event]="event1" #thumbnail (eventClick)="handleEventClicked($event)"></event-thumbnail>
+    <button class="btn btn-primary" (click)="thumbnail.logFoo()">Log me some foo!</button>
 </div>
