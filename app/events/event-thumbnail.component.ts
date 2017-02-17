@@ -35,7 +35,5 @@ export class EventThumbnailComponent {
            return { color: '#003300', 'font-weight': 'bold' }; 
        }
        return {};
-       
-        return { green: isEarlyStart, bold: isEarlyStart };
     };
 }
