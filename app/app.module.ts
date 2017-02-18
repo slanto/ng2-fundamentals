@@ -30,7 +30,24 @@ import { appRoutes } from './routes'
         EventDetailsComponent,
         CreateEventComponent,
         Error404Component],
-    providers: [EventService, ToastrService, EventRouteActivator],
+    providers: [
+        EventService,
+        ToastrService,
+        EventRouteActivator,
+        {
+            provide: 'canDeactivateCreateEvent',
+            useValue: checkDirtyState
+        }
+    ],
     bootstrap: [EventsAppComponent]
 })
 export class AppModule { }
+
+//it would be better to move it to other file
+function checkDirtyState(component: CreateEventComponent) { //first param of canDeactivate guard is component itself
+    if (component.isDirty) {
+        return window.confirm('You have not saved this event, do you realy want to cancel?');
+    }
+
+    return true;
+}
