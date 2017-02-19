@@ -10,8 +10,8 @@ import {
     EventThumbnailComponent,
     EventService,
     EventRouteActivator,
-    EventListResolver
-
+    EventListResolver,
+    DurationPipe
 } from './events/index'
 
 import { EventsAppComponent } from './events-app.component'
@@ -35,7 +35,8 @@ import { AuthService} from './user/auth.service'
         NavBarComponent,
         EventDetailsComponent,
         CreateEventComponent,
-        Error404Component],
+        Error404Component,
+        DurationPipe],
     providers: [
         EventService,
         ToastrService,
